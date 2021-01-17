@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "246518572061",
+    "project_id": "backyard-cinema-app",
+    "storage_bucket": "backyard-cinema-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246518572061:android:edbf7f0e4ade7becf852f4",
+        "android_client_info": {
+          "package_name": "me.ervinforth.barkyardcinema"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246518572061-65q7rtpe9c4p1nr86gerfbtemq66bqfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMcWrsj0JDbgYBBCODxVZQphQfeC9tUvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246518572061-65q7rtpe9c4p1nr86gerfbtemq66bqfg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
