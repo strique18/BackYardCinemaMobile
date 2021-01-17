@@ -24,6 +24,7 @@
         android:layout_marginStart="3dp"
         android:layout_marginEnd="3dp"
         android:text="Movie title"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/movie_item_image"
         app:layout_constraintStart_toStartOf="@+id/movie_item_image"

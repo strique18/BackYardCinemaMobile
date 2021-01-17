@@ -1,14 +1,18 @@
 package me.ervinforth.barkyardcinema;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-import com.androidnetworking.AndroidNetworking;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -18,23 +22,30 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Home extends AppCompatActivity {
+public class HomeFragment extends Fragment {
 
-    private ArrayList<Movie> nowShowingMovies = new ArrayList<>();
-    private MovieAdapter nowShowingAdapter = new MovieAdapter(nowShowingMovies);
-
+    final private ArrayList<Movie> nowShowingMovies = new ArrayList<>();
+    final private MovieAdapter nowShowingAdapter = new MovieAdapter(nowShowingMovies);
     // Access a Cloud Firestore instance from your Activity
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    public HomeFragment() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        AndroidNetworking.initialize(getApplicationContext());
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext(),
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(),
                 LinearLayoutManager.HORIZONTAL, false);
 
-        RecyclerView mNowShowingRecycler = findViewById(R.id.mNowShowingRecycler);
+        RecyclerView mNowShowingRecycler = view.findViewById(R.id.mNowShowingRecycler);
         mNowShowingRecycler.setLayoutManager(manager);
         mNowShowingRecycler.setAdapter(nowShowingAdapter);
 
