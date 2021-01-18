@@ -19,4 +19,14 @@
         android:name="me.ervinforth.barkyardcinema.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="me.ervinforth.barkyardcinema.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="me.ervinforth.barkyardcinema.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
 </navigation>
