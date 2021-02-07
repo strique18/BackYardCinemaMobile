@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        android:background="#424242"
+        android:background="#000"
         app:menu="@menu/bottom_nav_menu"
         style="@style/Widget.Design.BottomNavigationView"
         />
