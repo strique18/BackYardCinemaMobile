@@ -7,7 +7,7 @@
     android:layout_marginRight="20dp"
     android:id="@+id/movie_item">
 
-    <com.androidnetworking.widget.ANImageView
+    <ImageView
         android:id="@+id/movie_item_image"
         android:layout_width="150dp"
         android:layout_height="0dp"
