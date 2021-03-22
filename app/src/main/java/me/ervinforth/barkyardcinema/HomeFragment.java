@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,7 +25,12 @@ import java.util.HashMap;
 public class HomeFragment extends Fragment {
 
     final private ArrayList<Movie> nowShowingMovies = new ArrayList<>();
-    final private MovieAdapter nowShowingAdapter = new MovieAdapter(nowShowingMovies);
+    final private ArrayList<Movie> comingSoonMovies = new ArrayList<>();
+    private MovieAdapter nowShowingAdapter;
+    private MovieAdapter comingSoonAdapter;
+    RecyclerView comingSoonRecycler;
+    private SharedViewModel model;
+
     // Access a Cloud Firestore instance from your Activity
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -41,12 +47,21 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(),
-                LinearLayoutManager.HORIZONTAL, false);
+
+        model = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+
+        nowShowingAdapter = new MovieAdapter(nowShowingMovies, model);
+        comingSoonAdapter = new MovieAdapter(comingSoonMovies, model);
 
         RecyclerView mNowShowingRecycler = view.findViewById(R.id.mNowShowingRecycler);
-        mNowShowingRecycler.setLayoutManager(manager);
+        mNowShowingRecycler.setLayoutManager(new LinearLayoutManager(getContext(),
+                LinearLayoutManager.HORIZONTAL, false));
         mNowShowingRecycler.setAdapter(nowShowingAdapter);
+
+        RecyclerView comingSoonRecycler = view.findViewById(R.id.mComingSoonRecycler);
+        comingSoonRecycler.setLayoutManager(new LinearLayoutManager(getContext(),
+                LinearLayoutManager.HORIZONTAL, false));
+        comingSoonRecycler.setAdapter(comingSoonAdapter);
 
         loadDataFromFireStore();
     }
@@ -59,6 +74,7 @@ public class HomeFragment extends Fragment {
 
                     QuerySnapshot documents = task.getResult();
                     nowShowingMovies.clear();
+                    comingSoonMovies.clear();
 
                     for (QueryDocumentSnapshot document : documents)  {
                         String docID = document.getId();
@@ -72,6 +88,9 @@ public class HomeFragment extends Fragment {
                             nowShowingMovies.add(m);
                             // notify the adapter that the list has changed
                             nowShowingAdapter.notifyDataSetChanged();
+                        } else {
+                            comingSoonMovies.add(m);
+                            comingSoonAdapter.notifyDataSetChanged();
                         }
                     }
                 }

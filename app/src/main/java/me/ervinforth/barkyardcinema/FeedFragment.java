@@ -76,7 +76,7 @@ public class FeedFragment extends Fragment {
         testPostVideo.setType("video");
         testPostVideo.setSummary("Wanting to lead an honest life, a notorious bank robber turns " +
                 "himself in, only to be double-crossed by two ruthless FBI agents.");
-        testPostVideo.setVideoContent("https://imdb-video.media-imdb.com/vi845397529/1434659607842-pgv4ql-1596134478418.mp4?Expires=1613869274&Signature=mC7VF4-6qKMfT8ccphBdgYsgKUPulY4Mor8V7Eh5PqY5KuvxcIQarbljG~cALIGp2CIpRlc4l9aIo1bMy1jlidsYR68c4tncmk8gTVDs~5H4OG6Lebc95Mb86f~J4-ZCHcHWa3wetmws622zpuZa1WZoD9eOAIVCOMMP~PeaQLFN5QpN8Oe1K4VH4ck-EqWjw2J~UTJjxOoYhO0dHS423LwRoYqt8bRO6wXZbjrsPpHsF69pLI0JiuhTDX2modbau8vL-lP4KcB7xU34IonTeGlFKCTpFnU3hpG9UqrUvQc9P~Z1FCEyukY0CI-eLIEgwNiubwCBn~44dnzLVbFg8w__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA");
+        testPostVideo.setVideoContent("https://firebasestorage.googleapis.com/v0/b/backyard-cinema-app.appspot.com/o/1434659607842-pgv4ql-1612753217197.mp4?alt=media&token=81cc45ce-b0bc-4917-b2bb-af25da3ce907");
 
         list.add(testPost);
         list.add(testPostImage);

@@ -8,7 +8,11 @@
         android:id="@+id/homeFragment"
         android:name="me.ervinforth.barkyardcinema.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/feedFragment"
         android:name="me.ervinforth.barkyardcinema.FeedFragment"
@@ -18,5 +22,32 @@
         android:id="@+id/accountFragment"
         android:name="me.ervinforth.barkyardcinema.AccountFragment"
         android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="me.ervinforth.barkyardcinema.MovieDetailsFragment"
+        android:label="fragment_movie_details"
+        tools:layout="@layout/fragment_movie_details" >
+        <action
+            android:id="@+id/action_movieDetailsFragment_to_payTicketDialogFragment"
+            app:destination="@id/payTicketDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="me.ervinforth.barkyardcinema.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/payTicketDialogFragment"
+        android:name="me.ervinforth.barkyardcinema.PayTicketDialogFragment"
+        android:label="dialog_fragment_pay_ticket"
+        tools:layout="@layout/dialog_fragment_pay_ticket" />
 </navigation>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BarkYard Cinema</string>
+    <string name="app_name">BackYard Cinema</string>
     <string name="title_activity_main">MainActivity</string>
     <!--
     This string is used for square devices and overridden by hello_world in
@@ -10,4 +10,18 @@
     <string name="home">Home</string>
     <string name="feed">Feed</string>
     <string name="account">Account</string>
+    <string name="but_ticket">But Ticket</string>
+    <string name="buy_ticket">Buy Ticket</string>
+    <string name="orders">Orders</string>
+    <string name="signin">Sign In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="or">Or</string>
+    <string name="movie_ticket">Movie Ticket</string>
+    <string name="cinema">Cinema</string>
+    <string name="quantity">Quantity</string>
+    <string name="start_time">Start Time</string>
+    <string name="gct">+ GCT</string>
+    <string name="pay">Pay</string>
+
 </resources>
